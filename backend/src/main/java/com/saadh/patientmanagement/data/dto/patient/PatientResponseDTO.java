@@ -17,4 +17,5 @@ public class PatientResponseDTO {
     public String zipCode;
     public String phoneNumber;
     public String email;
+
 }
