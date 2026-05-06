@@ -1,5 +1,6 @@
 package com.saadh.patientmanagement.data.dto.common;
 
+import com.saadh.patientmanagement.data.enums.common.ResponseStatus;
 import lombok.*;
 
 @Getter
@@ -10,5 +11,5 @@ import lombok.*;
 public class ApiResponse<T> {
     private String message;
     private T data;
-    private String status;
+    private ResponseStatus status;
 }
