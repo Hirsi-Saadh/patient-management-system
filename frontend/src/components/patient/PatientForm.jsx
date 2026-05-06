@@ -20,7 +20,6 @@ const PatientForm = ({onSubmit, onClose}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        enqueueSnackbar("Patient added", {variant: 'success'});
         setFormData({
             firstName: '',
             lastName: '',

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {updatePatient} from '../../api/patientApi';
+import {enqueueSnackbar} from "notistack";
 
 const EDITABLE_COLUMNS = [
     {key: 'firstName', label: 'First Name'},
@@ -12,7 +13,7 @@ const EDITABLE_COLUMNS = [
     {key: 'email', label: 'Email'},
 ];
 
-const PatientTable = ({data = [], onDelete, refetch, newPatient}) => {
+const PatientTable = ({data = [], onDelete, refetch, newPatient, loading}) => {
     const [sortKey, setSortKey] = useState('id');
     const [sortDir, setSortDir] = useState(1);
     const [page, setPage] = useState(1);
@@ -80,6 +81,7 @@ const PatientTable = ({data = [], onDelete, refetch, newPatient}) => {
             setEditingId(null);
             setEditForm({});
             refetch();
+            enqueueSnackbar("Patient edited", {variant: 'success'});
         } catch (err) {
             setError(err?.response?.data?.message || 'Failed to save. Please try again.');
         } finally {
@@ -111,6 +113,14 @@ const PatientTable = ({data = [], onDelete, refetch, newPatient}) => {
             acc.push(p);
             return acc;
         }, []);
+
+    if (loading) {
+        return (
+            <div className="w-full py-12 text-center text-gray-400">
+                Loading patients...
+            </div>
+        );
+    }
 
     return (
         <div className="bg-white shadow-sm rounded-xl border border-gray-100 overflow-hidden">
