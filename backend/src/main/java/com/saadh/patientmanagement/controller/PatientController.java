@@ -19,7 +19,7 @@ import java.util.List;
 public class PatientController {
     private final PatientService patientService;
 
-    @Operation(summary = "Create a new patient")
+    @Operation(summary = "Create new patient")
     @PostMapping
     public ApiResponse<PatientResponseDTO> create(@RequestBody PatientRequestDTO patientRequestDTO) {
         return new ApiResponse<>(
@@ -45,6 +45,36 @@ public class PatientController {
         return new ApiResponse<>(
                 "Patient Fetched",
                 patientService.getById(id),
+                ResponseStatus.SUCCESS
+        );
+    }
+
+    @Operation(summary = "Patient details update")
+    @PutMapping("/{id}")
+    public ApiResponse<PatientResponseDTO> update(@PathVariable Long id, @RequestBody PatientRequestDTO patientRequestDTO) {
+        return new ApiResponse<>(
+                "Patient Updated",
+                patientService.updatePatient(id, patientRequestDTO),
+                ResponseStatus.SUCCESS
+        );
+    }
+
+    @Operation(summary = "Patient partial update")
+    @PatchMapping("/{id}")
+    public ApiResponse<PatientResponseDTO> partialUpdate(@PathVariable Long id, @RequestBody PatientRequestDTO patientRequestDTO) {
+        return new ApiResponse<>(
+                "Patient Partially Updated",
+                patientService.partialUpdatePatient(id, patientRequestDTO),
+                ResponseStatus.SUCCESS
+        );
+    }
+
+    @Operation(summary = "Patient Delete")
+    @DeleteMapping("/{id}")
+    public ApiResponse<String> delete(@PathVariable Long id) {
+        return new ApiResponse<>(
+                "Patient Deleted",
+                patientService.deletePatient(id),
                 ResponseStatus.SUCCESS
         );
     }

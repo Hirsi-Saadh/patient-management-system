@@ -24,6 +24,11 @@ public class PatientMapper {
         dto.id = entity.getId();
         dto.firstName = entity.getFirstName();
         dto.lastName = entity.getLastName();
+        dto.address = entity.getAddress();
+        dto.city = entity.getCity();
+        dto.state = entity.getState();
+        dto.zipCode = entity.getZipCode();
+        dto.phoneNumber = entity.getPhoneNumber();
         dto.email = entity.getEmail();
         return dto;
     }
