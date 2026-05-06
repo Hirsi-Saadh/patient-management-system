@@ -1,0 +1,99 @@
+# ===============================
+
+# ROOT .gitignore (Full Stack)
+
+# ===============================
+
+# ---------- OS ----------
+
+.DS_Store
+Thumbs.db
+
+# ---------- Logs ----------
+
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------- Environment ----------
+
+.env
+.env.*
+!.env.example
+
+# ---------- IDE (JetBrains) ----------
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ---------- VS Code ----------
+
+.vscode/
+
+# ===============================
+
+# BACKEND (Spring Boot / Maven)
+
+# ===============================
+
+# Build output
+
+/backend/target/
+
+# Maven wrapper logs
+
+/backend/.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot devtools
+
+spring.log
+
+# ===============================
+
+# FRONTEND (React / Vite)
+
+# ===============================
+
+# Dependencies
+
+/frontend/node_modules/
+
+# Build output
+
+/frontend/dist/
+frontend/build/
+
+# Vite cache
+
+/frontend/.vite/
+
+# ===============================
+
+# DATABASE / LOCAL FILES
+
+# ===============================
+
+# Local database files (if any)
+
+*.db
+*.sqlite
+
+# ===============================
+
+# MISC
+
+# ===============================
+
+# Temporary files
+
+*.tmp
+*.swp
+*.swo
+
+# Coverage
+
+coverage/
