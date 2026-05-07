@@ -134,6 +134,8 @@ npm run dev
 
 This will start the frontend on [http://localhost:5173](http://localhost:5173), which will automatically interact with the backend on [http://localhost:8080](http://localhost:8080).
 
+![img_1.png](img_1.png)
+
 ---
 
 ## API Documentation
@@ -145,6 +147,8 @@ http://localhost:8080/api/v1/swagger-ui/index.html
 ```
 
 This will show you the API documentation, where you can explore and interact with the available endpoints:
+
+![img.png](img.png)
 
 | Method   | Endpoint           | Description               |
 |----------|--------------------|---------------------------|
